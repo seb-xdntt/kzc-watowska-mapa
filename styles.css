@@ -1,7 +1,15 @@
 html {
-    max-width: 932px;
-    max-height: 430px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
 /* main page */
 #title {
     text-align: center;
@@ -17,26 +25,32 @@ html {
     font-size: 20px;
 }
 
-
 /* search section */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #search-icon {
     width: 35px;
     height: 35px;
-    margin-left: -2px;
-
+    margin: 0;
+    background-color: #efefef;
 }
 
-#search-bar input {
-    position: absolute;
-    top: 23px;
-    left: 100px;
+.search-bar-input {
+    position: relative;
     width: 300px;
+}
+
+.search-bar-input input {
+    width: 100%;
     height: 40px;
     font-size: 20px;
-}
-
-button:hover {
-    border-color: red;
+    background-color: #efefef;
+    padding-left: 10px;
 }
 
 /* buttons */
@@ -45,15 +59,43 @@ button {
     background-color: white;
     width: 60px;
     height: 55px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 0 10px 0 0;
+    background-color: #efefef;
+}
+
+button:hover {
+    border-color: red;
+}
+
+/* main container */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
 }
 
 /* mapa */
 #mapa {
-    width: 90%;
-    height: 100%;
-    margin-top: 150px;
-    margin-left: 20px;
+    width: 100%;
+    height: auto;
+    display: block;
+    transform-origin: center center;
 }
 
+#okno_mapki {
+    width: 80%;
+    max-width: 800px;
+    height: 60vh;
+    border: 3px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: auto;
+}

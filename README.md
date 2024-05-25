@@ -1,2 +1,3 @@
 # kzc-watowska-mapa
 ...
+https://kzc.gitbook.io/kzc-hackathon-spring/zasoby

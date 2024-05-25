@@ -1,4 +1,7 @@
-
+html {
+    max-width: 932px;
+    max-height: 430px;
+}
 /* main page */
 #title {
     text-align: center;
@@ -14,6 +17,7 @@
     font-size: 20px;
 }
 
+
 /* search section */
 #search-icon {
     width: 35px;
@@ -21,13 +25,18 @@
     margin-left: -2px;
 
 }
+
 #search-bar input {
     position: absolute;
     top: 23px;
     left: 100px;
     width: 300px;
     height: 40px;
-    
+    font-size: 20px;
+}
+
+button:hover {
+    border-color: red;
 }
 
 /* buttons */
@@ -39,3 +48,12 @@ button {
     margin-top: 10px;
     margin-left: 10px;
 }
+
+/* mapa */
+#mapa {
+    width: 90%;
+    height: 100%;
+    margin-top: 150px;
+    margin-left: 20px;
+}
+

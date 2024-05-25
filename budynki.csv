@@ -1,10 +1,10 @@
 id;nr.budynku;wydzial;skrot;nazwa;miejsce
 1;65;Wydzial Cybernetyki;WCY;Wat Budynek 65;https://maps.app.goo.gl/WituSi5GYbx2Y2wbA
-2;100;Sztab;S;Wojskowa Akademia Techniczna im. Jarosława Dąbrowskiego;https://maps.app.goo.gl/SHcj95qD6YBzevyXA
+2;100;Sztab;S;Wojskowa Akademia Techniczna im. Jaroslawa Dabrowskiego;https://maps.app.goo.gl/SHcj95qD6YBzevyXA
 3;34;Wydzial Nowych Technologii i Chemii;WTC;Wat Budynek 34;https://maps.app.goo.gl/sGkYnYng8p2TwxYE9
 4;36;Wydzial Mechatroniki i Lotnictwa;WML;Wat Budynek 36;https://maps.app.goo.gl/7ebCRWRc4FVBFgjP9
 5;46;Instytut Optoelektroniki;IOE;Wat Budynek 46;https://maps.app.goo.gl/Zmwsj5vHRwDZm2r89
-6;62;Wydzial Inżynierii Mechanicznej;WIM;Wat Budynek 62;https://maps.app.goo.gl/fSer8PMDtwRrRvgc6
+6;62;Wydzial Inzynierii Mechanicznej;WIM;Wat Budynek 62;https://maps.app.goo.gl/fSer8PMDtwRrRvgc6
 7;41;Instytut Optoelektroniki;IOE;Wat Budynek 41;https://maps.app.goo.gl/8eGP49HW3YxqMgMc7
 8;136;Instytut Optoelektroniki;IOE;Wat Budynek 136;https://maps.app.goo.gl/Q6Gc1cbGHoMbLVAP7
 9;47;Wydzial Elektroniki;WEL;Wat Budynek 47;https://maps.app.goo.gl/U5a5emw8RG6kh4wcA
@@ -12,20 +12,47 @@ id;nr.budynku;wydzial;skrot;nazwa;miejsce
 11;72;Wydzial Mechatroniki, Uzbrojenia i Lotnictwa;WML;Wat Budynek 72;https://maps.app.goo.gl/y7nykY7tLsPVnzvt5
 12;71;Wydzial Mechatroniki, Uzbrojenia i Lotnictwa;WML;Wat Budynek 71;https://maps.app.goo.gl/VVLd3qcR7hhpKQVRA
 13;61;Wydzial Elektroniki;WEL;Wat Budynek 61;https://maps.app.goo.gl/NCRNu8JCw72PbiTU7
-14;53;Wydzial Inżynierii Lądowej i Geodezji;WIG;Wat Budynek 53;https://maps.app.goo.gl/XmLmPYonh4RgEXZaA
-15;15;Wydzial Inżynierii Mechanicznej;WIM;Wat Budynek 15;https://maps.app.goo.gl/Yzxnr7fR9pK9f1Zs5
-16;19;Wydzial Inżynierii Mechanicznej;WIM;Wat Budynek 19;https://maps.app.goo.gl/3vYBFNUguDpnM2eo6
-17;135;Wydzial Bezpieczeństwa, Logistyki i Zarządzania;WLO;Wat Budynek 135;https://maps.app.goo.gl/69WWmAZBmXN4f8BM8
+14;53;Wydzial Inzynierii Ladowej i Geodezji;WIG;Wat Budynek 53;https://maps.app.goo.gl/XmLmPYonh4RgEXZaA
+15;15;Wydzial Inzynierii Mechanicznej;WIM;Wat Budynek 15;https://maps.app.goo.gl/Yzxnr7fR9pK9f1Zs5
+16;19;Wydzial Inzynierii Mechanicznej;WIM;Wat Budynek 19;https://maps.app.goo.gl/3vYBFNUguDpnM2eo6
+17;135;Wydzial Bezpieczenstwa, Logistyki i Zarzadzania;WLO;Wat Budynek 135;https://maps.app.goo.gl/69WWmAZBmXN4f8BM8
 18;75;Wydzial Elektroniki;WEL;Wat Budynek 75;https://maps.app.goo.gl/q5YUU8ZmKTav6QR1A
-19;158;Wydzial Bezpieczeństwa, Logistyki i Zarządzania, WLO; Wat Budynek 158;https://maps.app.goo.gl/9PUGMwRnXFuQHxSr8 
+19;158;Wydzial Bezpieczenstwa, Logistyki i Zarzadzania, WLO; Wat Budynek 158;https://maps.app.goo.gl/9PUGMwRnXFuQHxSr8 
 20;144;Instytut Optoelektroniki;IOE;Wat Budynek 144;https://maps.app.goo.gl/4uL4mD9idcQGRexR6
 21;66;Wydzial Mechatroniki i Lotnictwa;WMML;Wat Budynek 66;https://maps.app.goo.gl/WhGertgAo6y8PWR77
 22;55;Wydzial Nowych Technologii i Chemii; WTC; Wat Budynek 55;https://maps.app.goo.gl/BejLvoyrH1CZbHua7
 23;114;Wydzial Elektroniki; WEL; Wat Budynek 114;https://maps.app.goo.gl/HGQ1mrLweZDcx38H9 
 24;49;Instytut Optoelektroniki;IOE;Wat Budynek 49;https://maps.app.goo.gl/m93uKwRxoe96pc4v7
 25;5;Wydzial Nowych Technologii i Chemii;WTC; Wat Budynek 5;https://maps.app.goo.gl/M22NsZNNYFpXz8j78
-26;68;Wydzial Inżynierii Mechanicznej;WIM;Wat Budynek 68;https://maps.app.goo.gl/hHf9J1aDZk9ur3kN7
+26;68;Wydzial Inzynierii Mechanicznej;WIM;Wat Budynek 68;https://maps.app.goo.gl/hHf9J1aDZk9ur3kN7
 27;14;Wydzial Nowych Technologii i Chemii;WTC;Wat Budynek 14;https://maps.app.goo.gl/CXeBhCVCSihBTnAS9
 28;24;Wydzial Nowych Technologii i Chemii;WTC;Wat Budynek 24;https://maps.app.goo.gl/yjKxRwWhenYWrVx86
 29;26;Wydzial Mechatroniki i Lotnictwa;WML;Wat Budynek 26;https://maps.app.goo.gl/VVBJhxuh6e8zJJnU7
 30;29;Wydzial Elektroniki;WEL;Wat Budynek 29;https://maps.app.goo.gl/AqsFVxRASi24Lgty7
+31;bg;Wojskowa Akademia Techniczna;WAT;Biblioteka Glowna WAT;https://maps.app.goo.gl/qfhu2TnSaJUcBQH18
+32;aw1;Wojskowa Akademia Techniczna;WAT;Akademik Wojskowy nr. 1;https://maps.app.goo.gl/SYizrG2TFHgSfV7SA
+32;aw4;Wojskowa Akademia Techniczna;WAT;Akademik Wojskowy nr. 4;https://maps.app.goo.gl/Rdn6fRQwm36zLXSL6
+33;aw5;Wojskowa Akademia Techniczna;WAT;Akademik Wojskowy nr. 5;https://maps.app.goo.gl/4gmmAp3JqZv7QMyB8
+34;aw2;Wojskowa Akademia Techniczna;WAT;Akademik Wojskowy nr. 2;https://maps.app.goo.gl/W3SS7GZVbE9Dkb8f8
+35;aw3;Wojskowa Akademia Techniczna;WAT;Akademik Wojskowy nr. 3;https://maps.app.goo.gl/Ev1ohVt2BmGCJNiy9
+36;sw;Wojskowa Akademia Techniczna;WAT;Stolowka Wojskowa WAT;https://maps.app.goo.gl/kpbaYPPFYZXjfc718
+37;swf;Wojskowa Akademia Techniczna;WAT;Studium Wychowania Fizycznego;https://maps.app.goo.gl/yt5oZVpXZUfiKqpK8
+38;sw3;Wojskowa Akademia Techniczna;WAT;WAT Stolowka Wojskowa nr. 3 "Karaluch";https://maps.app.goo.gl/fMKsEu9jMUPtDPtVA 
+39;hl;Wydzial Mechatroniki i Lotnictwa;WML;Hangar Lotniczy;https://maps.app.goo.gl/rQwMfEVBjpHShrS36 
+40;42;Wydzial Elektroniki;WEL;Wat Budynek nr. 42;https://maps.app.goo.gl/HNcp2SHgyp6Lp7Nv9 
+41;22;Wydzial Bezpieczenstwa, Logistyki i Zarzadzania;WLO;Wat Budynek nr. 22;https://maps.app.goo.gl/LWeTAx9CcVtfU7kK8
+42;20;Wydzial Inzynierii Mechanicznej;WIM;Wat Budynek nr. 20;https://maps.app.goo.gl/kc93Q7qoydp2nYn37
+43;28;Wydzial Nowych Technologii i Chemii;WTC;Wat Budynek nr. 28;https://maps.app.goo.gl/qt9g6hYho3ggCo1s6
+44;98;Wydzial Inzynierii Ladowej i Geodezji;WIG;Wat Budynek nr. 98;https://maps.app.goo.gl/uxgoTdfJ55DygGg38
+45;25;Wydzial Nowych Technologii i Chemii;WTC;Wat Budynek nr. 25;https://maps.app.goo.gl/fhXLKceGm1C5o74Y7
+46;21;Wydzial Nowych Technologii i Chemii;WTC;Wat Budynek nr. 21;https://maps.app.goo.gl/AUEMk7CyQy4Atryd6
+47;17;Wydzial Nowych Technologii i Chemii;WTC;Wat Budynek nr. 17;https://maps.app.goo.gl/3mESmQ1WysJgkReeA
+48;59;Wydzial Inzynierii Ladowej i Geodezji;WIG;Wat Budynek nr. 59;https://maps.app.goo.gl/mrGxk15cPKMmodCCA
+49;58;Wydzial Inzynierii Ladowej i Geodezji;WIG;Wat Budynek nr. 58;https://maps.app.goo.gl/674fe9spJRFjhDDX9
+50;57;Wydzial Inzynierii Ladowej i Geodezji;WIG;Wat Budynek nr. 57;https://maps.app.goo.gl/QHYi3ciMN7pQ5drE8
+51;56;Wydzial Inzynierii Ladowej i Geodezji;WIG;Wat Budynek nr. 56;https://maps.app.goo.gl/VYU8cKCLwzyZHqj38
+52;54;Wydzial Inzynierii Mechanicznej;WIM;Wat Budynek nr. 54;https://maps.app.goo.gl/6k6DCSVmQA64YWPX6
+53;121;Wojskowe Centralne Biuro Konstrukcyjno Technologiczne;WCBKT;Wat Budynek nr. 121;https://maps.app.goo.gl/tUPrVXYaAvwHcEaq8
+54;74;Wydział Mechatroniki i Lotnictwa;WML;Wat Budynek nr. 74;https://maps.app.goo.gl/hqwFdfZJjpwM3M6PA
+55;67;Wydział Mechatroniki i Lotnictwa;WML;Wat Budynek nr. 67;https://maps.app.goo.gl/GzwhQBjQVvTwnCRy6
+56;69;Wydział Mechatroniki i Lotnictwa;WML;Wat Budynek nr. 69;https://maps.app.goo.gl/aKVvRhRHzBkUTKX47

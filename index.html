@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="search-bar">
-        <button>
+    <header class="search-bar">
+        <button aria-label="Search">
             <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/64/64673.png" alt="ikonka wyszukiwania">
         </button>
-        <div id="search-bar">
-            <input type="text" placeholder="Wyszukaj nr. budynku...">
+        <div class="search-bar-input">
+            <input type="text" placeholder="Wyszukaj nr. budynku..." aria-label="Search building number">
         </div>
-    </div>
+    </header>
 
-
-    <h1 id="title">Mapa obiektów na terenie WAT</h1>
-    <h2 id="call-to-action">Sprawdź, a zobaczysz</h2>
-    
-    <img id="mapa" src="./MAPA_WAT.svg" alt="Mapa obiektow WAT">
-
-    
+    <main>
+        <h1 id="title">Mapa obiektów na terenie WAT</h1>
+        <h2 id="call-to-action">Sprawdź, a zobaczysz</h2>
+        <div id="okno_mapki">
+            <img id="mapa" src="./MAPA_WAT.svg" alt="Mapa obiektow WAT">
+        </div>
+    </main>
 </body>
-<script src="./functionality.js">
-
-</script>
+<script src="./functionality.js"></script>
 </html>

@@ -1,13 +1,9 @@
-#%%
-s = input("nazwa/numer budynku")
-
-#%%
 budynekwords = ["budynek", "bud", "bud.", "b", "b."]
 sztabwords =["100","s","s.", "sz","sz.", "sztab"]
 akademik_wojskowywords = ["aw","aw.","akademik"]
 stolowka_wojskowawords = ["sw","sw.", "stolowka","stołówka", "stolówka", "stołowka"]
 bibliotekawords = ["biblioteka","biblio","bg"]
-#%%
+
 def findNumber(List):
     for i in List:
         if i.isnumeric():
@@ -60,7 +56,6 @@ def sigmaBalls(List):
     #print(List)
     return List
 
-#%%
 def Translator(inputString):
     outputString = inputString.strip()
     outputString = outputString.casefold()
@@ -84,7 +79,5 @@ def Translator(inputString):
 
     outputString = joinList(List)
     return outputString
-
-s= "100"
-print(f"outputstring: {Translator(s)}")
-# %%
+def main(Inputstring):
+    return Translator(Inputstring)

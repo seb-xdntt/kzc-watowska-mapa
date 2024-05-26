@@ -9,12 +9,10 @@
 </head>
 <body>
     <header>
-        <form>
             <div class="search">
                 <span class="search-icon material-symbols-outlined">search</span>
-                <input id="searchbar" onchange="search()" class="search-input" type="search" placeholder="Wyszukaj nr. budynku"
-            </div>
-        </form>
+                <input id="searchbar" onkeydown="removecolor()" oninput="search()" class="search-input" type="search" placeholder="Wyszukaj nr. budynku"
+            </ div>
     </header>
 
     <main>

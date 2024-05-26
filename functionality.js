@@ -175,3 +175,15 @@ function search(){
     console.log(budynek.getAttribute("class"))
     console.log(budynek.getAttribute("style"))
 }
+
+function removecolor(){
+    //let input = document.getElementById('searchbar').value;
+    console.log("removecolor");
+    console.log("class");
+    var els = document.getElementsByClassName("kolorek");
+
+    Array.prototype.forEach.call(els, function(el) {
+        el.removeAttribute("class");
+        console.log(el);
+    })
+}

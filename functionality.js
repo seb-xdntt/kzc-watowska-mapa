@@ -174,6 +174,32 @@ function search(){
     budynek.setAttribute("class","kolorek");
     console.log(budynek.getAttribute("class"))
     console.log(budynek.getAttribute("style"))
+    const okienko_informacji = document.querySelector('.info-window')
+    
+    const csv_parser = document.getElementById("csv-parser")
+    let text = csv_parser.innerText;
+    text = text.split(" ")
+    console.log(text)
+
+    for (let i = 1; i < text.length; i++) {
+        const textSub = text[i].split(";")
+        
+        if (input === textSub[1]) {
+            let wydzial = textSub[2].replaceAll("!", " ")
+            let nazwa = textSub[4].replaceAll("!", " ")
+            okienko_informacji.innerHTML = `
+            <h3>Skrót: ${textSub[3]}</h3>
+            <h3>Wydział: ${wydzial}</h3>
+            <h3>Nazwa: ${nazwa}</h3>
+            <h3>Nr. Budynku: ${textSub[1]}</h3>
+            <button>
+                <a href="${textSub[5]}" target=_blank>Droga</a>
+            </button>
+            `
+        }
+    }
+
+    okienko_informacji.style.display = 'block'
 }
 
 function removecolor(){

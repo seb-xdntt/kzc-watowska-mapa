@@ -1,0 +1,90 @@
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* main page */
+#title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 35px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #2B4B82;
+}
+#call-to-action {
+    text-align: center;
+    margin: 20px 30px 0 30px;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #2B4B82;
+}
+
+/* main container */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* mapa */
+#mapa {
+    width: 300%;
+    display: block;
+    transform-origin: center center;
+
+}
+
+#okno_mapki {
+    width: 80%;
+    max-width: 800px;
+    height: 60vh;
+    border: 3px solid #000;
+    border-radius: 10px;
+    border-color: #2B4B82;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #efefef;
+}
+
+.search {
+    --padding: 14px;
+
+    transform: translate(50%);
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #f6f6f6;
+}
+
+.search-input {
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+.search-input::placeholder,
+.search-icon {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.kolorek {
+    fill: rebeccapurple !important;
+}

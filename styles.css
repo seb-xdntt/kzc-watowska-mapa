@@ -36,15 +36,15 @@ main {
 
 /* mapa */
 #mapa {
-    width: 300%;
-    display: block;
+    min-width:fit-content;
+    display:block;
     transform-origin: center center;
 
 }
 
 #okno_mapki {
     width: 80%;
-    max-width: 800px;
+    max-width: 400px;
     height: 60vh;
     border: 3px solid #000;
     border-radius: 10px;

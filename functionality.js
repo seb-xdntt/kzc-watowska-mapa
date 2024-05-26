@@ -167,20 +167,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function search(){
     let input = document.getElementById('searchbar').value;
-    console.log(input)
+    console.log(input);
     var budynek = document.getElementById(input);
-    console.log(budynek)
-    console.log(budynek.getAttribute("class"))
     budynek.setAttribute("class","kolorek");
-    console.log(budynek.getAttribute("class"))
-    console.log(budynek.getAttribute("style"))
+    var budynekBox = budynek.getBBox();
+    console.log(budynekBox.x);
+    console.log(budynekBox.y);
+    var marker = document.getElementById("marker")
+    var para = 'translate('.concat(budynekBox.x,',',budynekBox.y-150,'), scale(0.2)')
+    console.log(para)
+    marker.setAttribute("transform", para);
+
     const okienko_informacji = document.querySelector('.info-window')
-    
     const csv_parser = document.getElementById("csv-parser")
     let text = csv_parser.innerText;
     text = text.split(" ")
-    console.log(text)
-
+    //console.log(text)
     for (let i = 1; i < text.length; i++) {
         const textSub = text[i].split(";")
         
@@ -198,7 +200,6 @@ function search(){
             `
         }
     }
-
     okienko_informacji.style.display = 'block'
 }
 
@@ -212,4 +213,9 @@ function removecolor(){
         el.removeAttribute("class");
         console.log(el);
     })
+
+    var marker = document.getElementById("marker")
+    marker.setAttribute("transform","scale(0.000001  )")
+
+    
 }

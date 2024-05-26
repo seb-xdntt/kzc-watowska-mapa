@@ -3,87 +3,163 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = document.getElementById('mapa');
 
     let isPanning = false;
-    let startX, startY, startScrollLeft, startScrollTop;
-    let scale = 1;
-    const scaleStep = 0.1;
-    const maxScale = 3;
-    const minScale = 0.5;
+    let startX, startY, transformMatrix;
+    const MIN_SCALE = 1;
+    const MAX_SCALE = 3;
+    const SCALE_STEP = 0.1;
 
-    const startPan = (x, y) => {
-        isPanning = true;
-        startX = x;
-        startY = y;
-        startScrollLeft = mapContainer.scrollLeft;
-        startScrollTop = mapContainer.scrollTop;
-        mapContainer.style.cursor = 'grabbing';
+    const DEFAULT_TRANSFORMATION = {
+        originX: 0,
+        originY: 0,
+        translateX: 0,
+        translateY: 0,
+        scale: 1
     };
 
-    const endPan = () => {
+    let state = {
+        container: mapContainer,
+        element: map,
+        minScale: MIN_SCALE,
+        maxScale: MAX_SCALE,
+        scaleSensitivity: 20,
+        transform: { ...DEFAULT_TRANSFORMATION }
+    };
+
+    function getTransformMatrix() {
+        const transformValue = window.getComputedStyle(map).getPropertyValue('transform');
+        if (transformValue === 'none') {
+            return [1, 0, 0, 1, 0, 0];
+        }
+        return transformValue.split('(')[1].split(')')[0].split(',').map(parseFloat);
+    }
+
+    function setTransformMatrix(matrix) {
+        map.style.transform = `matrix(${matrix.join(', ')})`;
+    }
+
+    function zoomMap(deltaY, offsetX, offsetY) {
+        const [a, b, c, d, e, f] = transformMatrix;
+        const scale = a;
+
+        let newScale = scale + (deltaY < 0 ? SCALE_STEP : -SCALE_STEP);
+        newScale = Math.min(Math.max(newScale, MIN_SCALE), MAX_SCALE);
+
+        const scaleRatio = newScale / scale;
+        const newMatrix = [
+            newScale, b, c, newScale,
+            e + (1 - scaleRatio) * offsetX,
+            f + (1 - scaleRatio) * offsetY
+        ];
+
+        setTransformMatrix(newMatrix);
+        transformMatrix = newMatrix;
+    }
+
+    function panMap(deltaX, deltaY) {
+        const [a, b, c, d, e, f] = transformMatrix;
+        const newMatrix = [a, b, c, d, e + deltaX, f + deltaY];
+        setTransformMatrix(newMatrix);
+        transformMatrix = newMatrix;
+    }
+
+    function clampedTranslate({ axis, translate }) {
+        const { scale, originX, originY } = state.transform;
+        const axisIsX = axis === 'x';
+        const origin = axisIsX ? originX : originY;
+        const axisKey = axisIsX ? 'offsetWidth' : 'offsetHeight';
+
+        const containerSize = state.container[axisKey];
+        const imageSize = state.element[axisKey];
+        const bounds = state.element.getBoundingClientRect();
+
+        const imageScaledSize = axisIsX ? bounds.width : bounds.height;
+
+        const defaultOrigin = imageSize / 2;
+        const originOffset = (origin - defaultOrigin) * (scale - 1);
+
+        const range = Math.max(0, Math.round(imageScaledSize) - containerSize);
+
+        const max = Math.round(range / 2);
+        const min = 0 - max;
+
+        return Math.max(Math.min(translate, max + originOffset), min + originOffset);
+    }
+
+    function renderClamped({ translateX, translateY }) {
+        const { originX, originY, scale } = state.transform;
+        state.transform.translateX = clampedTranslate({ axis: 'x', translate: translateX });
+        state.transform.translateY = clampedTranslate({ axis: 'y', translate: translateY });
+
+        requestAnimationFrame(() => {
+            map.style.transformOrigin = `${originX}px ${originY}px`;
+            map.style.transform = `matrix(${scale}, 0, 0, ${scale}, ${state.transform.translateX}, ${state.transform.translateY})`;
+        });
+    }
+
+    function handleTouchStart(event) {
+        event.preventDefault();
+        if (event.touches.length === 1) {
+            isPanning = true;
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+        }
+    }
+
+    function handleTouchMove(event) {
+        if (!isPanning || event.touches.length !== 1) return;
+        event.preventDefault();
+        const deltaX = event.touches[0].clientX - startX;
+        const deltaY = event.touches[0].clientY - startY;
+        panMap(deltaX, deltaY);
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    }
+
+    function handleTouchEnd() {
+        isPanning = false;
+    }
+
+    mapContainer.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        isPanning = true;
+        startX = event.clientX;
+        startY = event.clientY;
+        mapContainer.style.cursor = 'grabbing';
+    });
+
+    mapContainer.addEventListener('mousemove', (event) => {
+        if (!isPanning) return;
+        event.preventDefault();
+        const deltaX = event.clientX - startX;
+        const deltaY = event.clientY - startY;
+        panMap(deltaX, deltaY);
+        startX = event.clientX;
+        startY = event.clientY;
+    });
+
+    mapContainer.addEventListener('mouseup', () => {
         isPanning = false;
         mapContainer.style.cursor = 'grab';
-    };
-
-    const pan = (x, y) => {
-        if (!isPanning) return;
-        const deltaX = x - startX;
-        const deltaY = y - startY;
-        mapContainer.scrollLeft = startScrollLeft - deltaX;
-        mapContainer.scrollTop = startScrollTop - deltaY;
-    };
-
-    // Replace 'mousedown' with 'pointerdown' to capture touch events as well
-    mapContainer.addEventListener('pointerdown', (e) => {
-        if (e.pointerType === 'mouse') {
-            startPan(e.clientX, e.clientY);
-        } else if (e.pointerType === 'touch' && e.touches.length === 1) {
-            startPan(e.touches[0].clientX, e.touches[0].clientY);
-        }
     });
 
-    // Replace 'mouseup' with 'pointerup' to capture touch events as well
-    mapContainer.addEventListener('pointerup', endPan);
-    mapContainer.addEventListener('mouseleave', endPan);
-
-    // Replace 'mousemove' with 'pointermove' to capture touch events as well
-    mapContainer.addEventListener('pointermove', (e) => {
-        if (e.pointerType === 'mouse') {
-            pan(e.clientX, e.clientY);
-        } else if (e.pointerType === 'touch' && e.touches.length === 1) {
-            pan(e.touches[0].clientX, e.touches[0].clientY);
-        }
+    mapContainer.addEventListener('mouseleave', () => {
+        isPanning = false;
+        mapContainer.style.cursor = 'grab';
     });
 
-    const zoom = (e) => {
-        e.preventDefault();
-
+    mapContainer.addEventListener('wheel', (event) => {
+        event.preventDefault();
         const rect = map.getBoundingClientRect();
-        const offsetX = e.clientX - rect.left;
-        const offsetY = e.clientY - rect.top;
-        const offsetXRatio = offsetX / rect.width;
-        const offsetYRatio = offsetY / rect.height;
+        const offsetX = event.clientX - rect.left;
+        const offsetY = event.clientY - rect.top;
+        zoomMap(event.deltaY, offsetX, offsetY);
+    });
 
-        const previousScale = scale;
+    mapContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+    mapContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+    mapContainer.addEventListener('touchend', handleTouchEnd);
+    mapContainer.addEventListener('touchcancel', handleTouchEnd);
 
-        if (e.deltaY < 0 && scale < maxScale) {
-            scale = Math.min(scale + scaleStep, maxScale);
-        } else if (e.deltaY > 0 && scale > minScale) {
-            scale = Math.max(scale - scaleStep, minScale);
-        }
-
-        const newWidth = map.clientWidth * scale;
-        const newHeight = map.clientHeight * scale;
-
-        const newScrollLeft = ((mapContainer.scrollLeft + offsetX) * scale / previousScale) - offsetX;
-        const newScrollTop = ((mapContainer.scrollTop + offsetY) * scale / previousScale) - offsetY;
-
-        map.style.transform = `scale(${scale})`;
-        map.style.transformOrigin = `${offsetXRatio * 100}% ${offsetYRatio * 100}%`;
-
-        mapContainer.scrollLeft = newScrollLeft;
-        mapContainer.scrollTop = newScrollTop;
-    };
-
-    mapContainer.addEventListener('wheel', zoom);
-
+    transformMatrix = getTransformMatrix();
     mapContainer.style.cursor = 'grab';
 });

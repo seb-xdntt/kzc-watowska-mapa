@@ -1,6 +1,4 @@
 html {
-    height: 100%;
-    width: 100%;
     margin: 0;
     padding: 0;
     background-color: #efefef;
@@ -15,14 +13,13 @@ html {
     text-align: center;
     margin: 40px 30px 0 30px;
     font-size: 35px;
-}
-#title, #call-to-action {
     font-family: 'Titillium Web', sans-serif;
 }
 #call-to-action {
     text-align: center;
     margin: 20px 30px 0 30px;
     font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 /* search section */
@@ -79,8 +76,7 @@ main {
 
 /* mapa */
 #mapa {
-    width: 100%;
-    height: auto;
+    width: 300%;
     display: block;
     transform-origin: center center;
 }
@@ -96,6 +92,5 @@ main {
     margin: 20px 0;
     display: flex;
     justify-content: center;
-    position: relative;
-    overflow: auto;
+
 }

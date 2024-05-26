@@ -91,3 +91,46 @@ main {
 .kolorek {
     fill: rebeccapurple !important;
 }
+
+.info-window {
+    background: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    display: none;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+.info-window h3 {
+    color: #333;
+    margin: 0 0 10px;
+}
+.info-window p {
+    color: #666;
+    margin: 0 0 20px;
+}
+.info-window button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.info-window button:hover {
+    background-color: #0056b3;
+}
+.info-window button a {
+    color: white;
+    text-decoration: none;
+}
+
+#csv-parser {
+    display: none;
+}

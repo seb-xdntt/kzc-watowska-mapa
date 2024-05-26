@@ -11,15 +11,17 @@ html {
 /* main page */
 #title {
     text-align: center;
-    margin: 40px 30px 0 30px;
+    margin-bottom: 5px;
     font-size: 35px;
     font-family: 'Titillium Web', sans-serif;
+    color: #2B4B82;
 }
 #call-to-action {
     text-align: center;
     margin: 20px 30px 0 30px;
     font-size: 20px;
     font-family: 'Titillium Web', sans-serif;
+    color: #2B4B82;
 }
 
 /* search section */
@@ -34,7 +36,7 @@ html {
     width: 35px;
     height: 35px;
     margin: 0;
-    background-color: #efefef;
+    background-color: transparent;
 }
 
 .search-bar-input {
@@ -46,22 +48,23 @@ html {
     width: 100%;
     height: 40px;
     font-size: 20px;
-    background-color: #efefef;
+    background-color: transparent;
     padding-left: 10px;
 }
 
 /* buttons */
 button {
     border-radius: 25%;
-    background-color: white;
     width: 60px;
     height: 55px;
     margin: 0 10px 0 0;
-    background-color: #efefef;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: transparent;
 }
 
 button:hover {
-    border-color: red;
+    border-color: rgb(200, 126, 202);
 }
 
 /* main container */
@@ -79,6 +82,7 @@ main {
     width: 300%;
     display: block;
     transform-origin: center center;
+
 }
 
 #okno_mapki {
@@ -87,10 +91,17 @@ main {
     height: 60vh;
     border: 3px solid #000;
     border-radius: 10px;
+    border-color: #2B4B82;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 20px 0;
     display: flex;
     justify-content: center;
+    background-color: #efefef;
+}
 
+header {
+    background-color: #2B4B82;;
+    border: #000 3px solid;
+    border-radius: 3px;
 }

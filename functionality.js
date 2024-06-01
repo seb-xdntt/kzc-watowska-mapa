@@ -165,9 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function search(){
-    let input = document.getElementById('searchbar').value;
-    console.log(input);
+function search(input){
+    //let input = document.getElementById('searchbar').value;
+    console.log("input", input);
     var budynek = document.getElementById(input);
     budynek.setAttribute("class","kolorek");
     var budynekBox = budynek.getBBox();
@@ -177,8 +177,31 @@ function search(){
     var para = 'translate('.concat(budynekBox.x,',',budynekBox.y-150,'), scale(0.2)')
     console.log(para)
     marker.setAttribute("transform", para);
+}
 
+function removecolor(){
+    //let input = document.getElementById('searchbar').value;
+    console.log("removecolor");
+    console.log("class");
+    var els = document.getElementsByClassName("kolorek");
+
+    Array.prototype.forEach.call(els, function(el) {
+        el.removeAttribute("class");
+        console.log(el);
+    })
+
+    var marker = document.getElementById("marker")
+    marker.setAttribute("transform","scale(0.000001  )")
+
+    
+}
+
+function infoWindow(input){
+    console.log("infoWindow")
     const okienko_informacji = document.querySelector('.info-window')
+    //const tabelaBudynkow = $.csv.toObjects("budynki.csv")
+    //console.log('tabelaBudynkow :>> ', tabelaBudynkow);
+
     const csv_parser = document.getElementById("csv-parser")
     let text = csv_parser.innerText;
     text = text.split(" ")
@@ -201,21 +224,4 @@ function search(){
         }
     }
     okienko_informacji.style.display = 'block'
-}
-
-function removecolor(){
-    //let input = document.getElementById('searchbar').value;
-    console.log("removecolor");
-    console.log("class");
-    var els = document.getElementsByClassName("kolorek");
-
-    Array.prototype.forEach.call(els, function(el) {
-        el.removeAttribute("class");
-        console.log(el);
-    })
-
-    var marker = document.getElementById("marker")
-    marker.setAttribute("transform","scale(0.000001  )")
-
-    
 }
